@@ -1,0 +1,4 @@
+description: Promote patch release
+executor: devops-k8s
+steps:
+  - promote-hotfix

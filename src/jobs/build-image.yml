@@ -1,0 +1,5 @@
+description: Build application and push to registry
+executor: devops-k8s
+steps:
+  - build-k8s:
+      registry_url: "us.gcr.io/kenect-service-dev"

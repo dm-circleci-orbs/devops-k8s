@@ -1,0 +1,4 @@
+description: Promote minor release
+executor: devops-k8s
+steps:
+  - promote-release

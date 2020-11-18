@@ -1,0 +1,7 @@
+parameters:
+steps:
+  - checkout
+  - run:
+      name: Start gitflow patch release (Semver)
+      command: |
+        /workspace/devops/scripts/start-patch-release.sh

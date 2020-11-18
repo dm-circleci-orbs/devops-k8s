@@ -1,0 +1,4 @@
+description: Start patch release
+executor: devops-k8s
+steps:
+  - start-hotfix

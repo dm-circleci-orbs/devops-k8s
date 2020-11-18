@@ -1,0 +1,22 @@
+description: >
+  Command to deploy to k8s cluster
+parameters:
+  app_code:
+    type: string
+  app_port:
+    type: integer
+    default: 8080
+  app_env:
+    type: string
+    default: "development"
+steps:
+  - attach_workspace:
+      at: /workspace
+  - checkout
+  - run:
+      name: Deploy application
+      command: |
+        export APP_CODE=<<parameters.app_code>>
+        export APP_PORT=<<parameters.app_port>>
+        export APP_ENV=<<parameters.app_env>>
+        /workspace/devops/scripts/deploy-k8s.sh

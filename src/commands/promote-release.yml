@@ -1,0 +1,7 @@
+parameters:
+steps:
+  - checkout
+  - run:
+      name: Promote gitflow minor release (Semver)
+      command: |
+        /workspace/devops/scripts/close-minor-release.sh

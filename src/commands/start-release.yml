@@ -1,0 +1,7 @@
+parameters:
+steps:
+  - checkout
+  - run:
+      name: Start gitflow minor release (Semver)
+      command: |
+        /workspace/devops/scripts/start-minor-release.sh

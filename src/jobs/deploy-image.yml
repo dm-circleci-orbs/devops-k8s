@@ -1,0 +1,16 @@
+description: Deploy develop to GKE
+executor: devops-k8s
+parameters:
+  app_code:
+    type: string
+  app_port:
+    type: integer
+    default: 8080
+  app_env:
+    type: string
+    default: "development"
+steps:
+  - deploy-k8s:
+      app_code: <<parameters.app_code>>
+      app_port: <<parameters.app_port>>
+      app_env: <<parameters.app_env>>

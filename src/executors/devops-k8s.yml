@@ -1,0 +1,5 @@
+docker:
+  - image: kenectorganization/devops-k8s
+    auth:
+      username: $DOCKERHUB_USERNAME
+      password: $DOCKERHUB_PASSWORD

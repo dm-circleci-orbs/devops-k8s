@@ -1,0 +1,4 @@
+description: Start minor release
+executor: devops-k8s
+steps:
+  - start-release
