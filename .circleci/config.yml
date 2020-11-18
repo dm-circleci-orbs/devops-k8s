@@ -14,21 +14,11 @@ workflows:
           requires:
             - orb-tools/lint
             - orb-tools/pack
-      - hold-for-orb-publish:
-          type: approval
-          requires:
-            - orb-tools/publish-dev
-          filters:
-            branches:
-              only:
-                - master
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: dm-circleci-orbs/devops-k8s
-          add-pr-comment: false
+          add-pr-comment: true
           fail-if-semver-not-indicated: true
-          publish-version-tag: false
-          requires:
-            - hold-for-orb-publish
+          publish-version-tag: true
           filters:
             branches:
               only:
