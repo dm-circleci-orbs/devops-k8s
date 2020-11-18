@@ -8,12 +8,26 @@ workflows:
   orbs_pipeline:
     jobs:
       - orb-tools/lint
+          filters: &development
+            branches:
+              only:
+                - develop
       - orb-tools/pack
-      - orb-tools/publish-dev:
-          orb-name: dm-circleci-orbs/devops-k8s
+          filters:
+            <<: *development
+      - hold-for-dev-publish:
+          type: approval
           requires:
             - orb-tools/lint
             - orb-tools/pack
+          filters:
+            <<: *development
+      - orb-tools/publish-dev:
+          orb-name: dm-circleci-orbs/devops-k8s
+          requires:
+            - hold-for-dev-publish
+          filters:
+            <<: *development
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: dm-circleci-orbs/devops-k8s
           add-pr-comment: true
