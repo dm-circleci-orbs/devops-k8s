@@ -1,0 +1,7 @@
+parameters:
+steps:
+  - checkout
+  - run:
+      name: Start gitflow major release (Semver)
+      command: |
+        /workspace/devops/scripts/start-major-release.sh

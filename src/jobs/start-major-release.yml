@@ -1,0 +1,4 @@
+description: Start major release
+executor: devops-k8s
+steps:
+  - start-major-release
