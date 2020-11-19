@@ -16,9 +16,9 @@ workflows:
             - orb-tools/pack
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: dm-circleci-orbs/devops-k8s
-          add-pr-comment: true
+          add-pr-comment: false
           fail-if-semver-not-indicated: true
-          publish-version-tag: true
+          publish-version-tag: false
           requires:
             - orb-tools/publish-dev
           filters:
