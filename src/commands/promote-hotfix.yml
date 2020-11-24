@@ -2,6 +2,6 @@ parameters:
 steps:
   - checkout
   - run:
-      name: Promote gitflow patch release (Semver)
+      name: Promote gitflow release (Semver)
       command: |
-        /workspace/devops/scripts/close-patch-release.sh
+        /workspace/devops/scripts/close-release.sh
